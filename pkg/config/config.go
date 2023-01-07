@@ -43,3 +43,16 @@ func LoadConfig(configFilePath string) (*Config, error) {
 func CreateConfigFileTemplate(configFilePath string) error {
 	return os.WriteFile(configFilePath, assets.ConfigTemplate, 0644)
 }
+
+func (c *Config) GetDefaultDevice() *Device {
+	for _, device := range c.Devices {
+		if device.IsDefault {
+			return device
+		}
+	}
+	return nil
+}
+
+func (c *Config) IsDefaultDeviceExist() bool {
+	return c.GetDefaultDevice() != nil
+}
