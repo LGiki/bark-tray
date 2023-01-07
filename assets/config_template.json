@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "enableLog": true,
-  "logFile": "bark-tray.log",
+  "logFilePath": "bark-tray.log",
   "timeout": 5,
   "devices": []
 }

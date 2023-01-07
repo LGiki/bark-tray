@@ -15,11 +15,11 @@ type Device struct {
 }
 
 type Config struct {
-	Version   string    `json:"version"`
-	EnableLog bool      `json:"enableLog"`
-	LogFile   string    `json:"logFile"`
-	Timeout   int       `json:"timeout"`
-	Devices   []*Device `json:"devices"`
+	Version     string    `json:"version"`
+	EnableLog   bool      `json:"enableLog"`
+	LogFilePath string    `json:"logFilePath"`
+	Timeout     int       `json:"timeout"`
+	Devices     []*Device `json:"devices"`
 }
 
 func LoadConfig(configFilePath string) (*Config, error) {
