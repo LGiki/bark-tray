@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "enableLog": true,
   "logFilePath": "bark-tray.log",
+  "userAgent": "Bark Tray/1.0",
   "timeout": 5,
   "devices": []
 }

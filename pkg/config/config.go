@@ -18,6 +18,7 @@ type Config struct {
 	Version     string    `json:"version"`
 	EnableLog   bool      `json:"enableLog"`
 	LogFilePath string    `json:"logFilePath"`
+	UserAgent   string    `json:"userAgent"`
 	Timeout     int       `json:"timeout"`
 	Devices     []*Device `json:"devices"`
 }
