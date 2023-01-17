@@ -8,10 +8,10 @@ import (
 )
 
 type Device struct {
-	Name          string `json:"name"`
-	BarkServerUrl string `json:"barkServerUrl"`
-	Key           string `json:"key"`
-	IsDefault     bool   `json:"isDefault"`
+	Name        string `json:"name"`
+	BarkBaseUrl string `json:"barkBaseUrl"`
+	Key         string `json:"key"`
+	IsDefault   bool   `json:"isDefault"`
 }
 
 type Config struct {
