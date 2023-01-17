@@ -2,9 +2,11 @@ package util
 
 import (
 	"fmt"
+	"net/url"
 	"os"
 	"os/exec"
 	"runtime"
+	"strings"
 )
 
 // OpenUrl opens the specified URL in the default browser of the user.
@@ -27,4 +29,24 @@ func OpenUrl(url string) error {
 func IsFileExists(filePath string) bool {
 	_, err := os.Stat(filePath)
 	return !os.IsNotExist(err)
+}
+
+// IsValidHttpUrl validates if the specified raw URL is a http URL.
+func IsValidHttpUrl(rawUrl string) bool {
+	if strings.HasPrefix(rawUrl, "http://") || strings.HasPrefix(rawUrl, "https://") {
+		u, err := url.Parse(rawUrl)
+		return err == nil && u.Host != ""
+	}
+	return false
+}
+
+// StripQueryParamFromUrl strips query parameters from specified URL.
+func StripQueryParamFromUrl(rawUrl string) (string, error) {
+	u, err := url.Parse(rawUrl)
+	if err != nil {
+		return "", err
+	}
+	u.RawQuery = ""
+	u.ForceQuery = false
+	return u.String(), nil
 }

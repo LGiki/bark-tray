@@ -1,18 +1,11 @@
 package config
 
 import (
-	"bark-tray-new/assets"
 	"encoding/json"
+	"github.com/LGiki/bark-tray/assets"
 	"io"
 	"os"
 )
-
-type Device struct {
-	Name        string `json:"name"`
-	BarkBaseUrl string `json:"barkBaseUrl"`
-	Key         string `json:"key"`
-	IsDefault   bool   `json:"isDefault"`
-}
 
 type Config struct {
 	Version     string    `json:"version"`

@@ -1,10 +1,12 @@
-module bark-tray-new
+module github.com/LGiki/bark-tray
 
 go 1.19
 
 require (
 	github.com/akavel/rsrc v0.10.2 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dchest/jsmin v0.0.0-20220218165748-59f39799265f // indirect
+	github.com/emersion/go-autostart v0.0.0-20210130080809-00ed301c8e9a // indirect
 	github.com/getlantern/context v0.0.0-20220418194847-3d5e7a086201 // indirect
 	github.com/getlantern/errors v1.0.3 // indirect
 	github.com/getlantern/golog v0.0.0-20221014032422-49749a7176cf // indirect
@@ -18,7 +20,10 @@ require (
 	github.com/josephspurrier/goversioninfo v1.4.0 // indirect
 	github.com/ncruces/zenity v0.10.5 // indirect
 	github.com/oxtoacart/bpool v0.0.0-20190530202638-03653db5a59c // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/randall77/makefat v0.0.0-20210315173500-7ddd0e42c844 // indirect
+	github.com/stretchr/objx v0.5.0 // indirect
+	github.com/stretchr/testify v1.8.1 // indirect
 	go.opentelemetry.io/otel v1.11.2 // indirect
 	go.opentelemetry.io/otel/trace v1.11.2 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
@@ -29,5 +34,8 @@ require (
 	golang.org/x/exp/shiny v0.0.0-20230105202349-8879d0199aa3 // indirect
 	golang.org/x/image v0.3.0 // indirect
 	golang.org/x/mobile v0.0.0-20221110043201-43a038452099 // indirect
+	golang.org/x/net v0.5.0 // indirect
 	golang.org/x/sys v0.4.0 // indirect
+	golang.org/x/text v0.6.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

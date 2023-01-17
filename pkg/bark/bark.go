@@ -1,9 +1,9 @@
 package bark
 
 import (
-	"bark-tray-new/pkg/httpClient"
 	"bytes"
 	"encoding/json"
+	"github.com/LGiki/bark-tray/pkg/httpClient"
 	"io"
 	"net/http"
 	"net/url"
