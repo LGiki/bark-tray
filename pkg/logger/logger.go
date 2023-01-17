@@ -24,15 +24,17 @@ func InitLogger(logFilePath string) error {
 			CallerKey:      "",
 			FunctionKey:    zapcore.OmitKey,
 			MessageKey:     "msg",
-			StacktraceKey:  "stacktrace",
+			StacktraceKey:  "",
 			LineEnding:     zapcore.DefaultLineEnding,
 			EncodeLevel:    zapcore.LowercaseLevelEncoder,
 			EncodeTime:     zapcore.EpochTimeEncoder,
 			EncodeDuration: zapcore.SecondsDurationEncoder,
 			EncodeCaller:   zapcore.ShortCallerEncoder,
 		},
-		OutputPaths:      []string{"stderr", logFilePath},
-		ErrorOutputPaths: []string{"stderr", logFilePath},
+		OutputPaths:       []string{"stderr", logFilePath},
+		ErrorOutputPaths:  []string{"stderr", logFilePath},
+		DisableStacktrace: true,
+		DisableCaller:     true,
 	}
 	logger, err = zapConfig.Build()
 	return err
