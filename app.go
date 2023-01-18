@@ -189,6 +189,8 @@ func main() {
 		}
 	}
 
+	appConfig.StripInvalidDevices()
+
 	err = clipboard.Init()
 	if err != nil {
 		logger.Error("Failed to initialize clipboard: " + err.Error())
