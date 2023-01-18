@@ -1,6 +1,6 @@
 # Bark Tray
 
-![GitHub](https://img.shields.io/github/license/LGiki/bark-tray?style=flat-square)
+[![GitHub](https://img.shields.io/github/license/LGiki/bark-tray?style=flat-square)](https://github.com/LGiki/bark-tray/blob/master/LICENSE) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/LGiki/bark-tray/release.yml?style=flat-square) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/LGiki/bark-tray?style=flat-square)](https://github.com/LGiki/bark-tray/releases)
 
 A tray tool for sending **clipboard** text to iOS devices via [Bark](https://github.com/Finb/Bark).
 
