@@ -4,6 +4,10 @@
 
 A tray tool for sending **clipboard** text to iOS devices via [Bark](https://github.com/Finb/Bark).
 
+# Screenshot
+
+https://user-images.githubusercontent.com/20807713/213143098-73b28ce4-4b68-40b5-a42a-80f8411ae5e8.mp4
+
 # Usage
 
 - Download the latest version from [release](https://github.com/LGiki/bark-tray/releases) page and extract it.
@@ -28,7 +32,7 @@ A tray tool for sending **clipboard** text to iOS devices via [Bark](https://git
   }
   ```
   
-- Start the Bark Tray and enjoy it.
+- Start the Bark Tray and enjoy it. :-)
 
 # Configuration file
 
@@ -55,6 +59,10 @@ The `devices` field in the configuration file is an array of `Device` objects, a
 | barkBaseUrl | string  | URL of Bark server, e.g. `https://api.day.app`.              |
 | key         | string  | Key of the device.<br />Suppose the URL displayed on the Bark App homepage is: `https://api.day.app/abcdefghijklmnopqrstuv/example`, then `abcdefghijklmnopqrstuv` is the key of your device. |
 | isDefault   | boolean | Whether the current device is the default device.<br />If there are multiple default devices, the first default device in the devices array will be the default device. |
+
+# Build
+
+This program uses [systray](https://github.com/getlantern/systray), which has some requirements for compiling on different platforms, you can [click here](https://github.com/getlantern/systray#platform-notes) to see the detailed requirements.
 
 # License
 
