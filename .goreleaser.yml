@@ -1,0 +1,29 @@
+project_name: bark-tray
+
+builds:
+  - main: ./
+    binary: bark-tray
+    goos:
+      - linux
+    goarch:
+      - amd64
+
+before:
+  hooks:
+    - cp assets/config_template.json config.json
+
+archives:
+  -
+    files:
+      - src: 'config.json'
+        dst: .
+        strip_parent: true
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ incpatch .Tag }}"
+
+changelog:
+  sort: asc
