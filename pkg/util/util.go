@@ -5,6 +5,7 @@ import (
 	"net/url"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"runtime"
 	"strings"
 )
@@ -49,4 +50,14 @@ func StripQueryParamFromUrl(rawUrl string) (string, error) {
 	u.RawQuery = ""
 	u.ForceQuery = false
 	return u.String(), nil
+}
+
+// GetExecutablePath returns the directory of the currently running file.
+func GetExecutablePath() (string, error) {
+	ex, err := os.Executable()
+	if err != nil {
+		return "", err
+	}
+	exPath := filepath.Dir(ex)
+	return exPath, nil
 }

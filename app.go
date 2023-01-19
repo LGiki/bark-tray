@@ -13,11 +13,12 @@ import (
 	"github.com/ncruces/zenity"
 	"golang.design/x/clipboard"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
 const (
-	configFilePath = "config.json"
+	configFileName = "config.json"
 )
 
 var appConfig *config.Config
@@ -153,6 +154,17 @@ func onExit() {
 
 func main() {
 	var err error
+
+	executablePath, err := util.GetExecutablePath()
+	if err != nil {
+		_ = zenity.Error(
+			"Failed to get executable path: "+err.Error(),
+			zenity.Title("Bark Tray"),
+			zenity.OKLabel("OK"),
+		)
+	}
+	configFilePath := filepath.Join(executablePath, configFileName)
+
 	if !util.IsFileExists(configFilePath) {
 		err = config.CreateConfigFileTemplate(configFilePath)
 		if err != nil {
@@ -169,6 +181,7 @@ func main() {
 		}
 		return
 	}
+
 	appConfig, err = config.LoadConfig(configFilePath)
 	if err != nil {
 		_ = zenity.Error(
@@ -178,6 +191,7 @@ func main() {
 		)
 		return
 	}
+
 	if appConfig.EnableLog {
 		err = logger.InitLogger(appConfig.LogFilePath)
 		if err != nil {
