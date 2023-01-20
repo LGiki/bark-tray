@@ -61,3 +61,13 @@ func GetExecutablePath() (string, error) {
 	exPath := filepath.Dir(ex)
 	return exPath, nil
 }
+
+// ToAbsolutePath determines if filePath is an absolute path.
+// If it is an absolute path, it returns the original filePath directly.
+// If it is a relative path, it will be concatenated with executablePath and returned.
+func ToAbsolutePath(filePath, executablePath string) string {
+	if filepath.IsAbs(filePath) {
+		return filePath
+	}
+	return filepath.Join(executablePath, filePath)
+}

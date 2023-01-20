@@ -193,6 +193,7 @@ func main() {
 	}
 
 	if appConfig.EnableLog {
+		appConfig.LogFilePath = util.ToAbsolutePath(appConfig.LogFilePath, executablePath)
 		err = logger.InitLogger(appConfig.LogFilePath)
 		if err != nil {
 			_ = zenity.Error(
