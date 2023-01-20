@@ -31,7 +31,7 @@ func InitLogger(logFilePath string) error {
 			EncodeDuration: zapcore.SecondsDurationEncoder,
 			EncodeCaller:   zapcore.ShortCallerEncoder,
 		},
-		OutputPaths:       []string{"stderr", logFilePath},
+		OutputPaths:       []string{logFilePath},
 		ErrorOutputPaths:  []string{"stderr", logFilePath},
 		DisableStacktrace: true,
 		DisableCaller:     true,
