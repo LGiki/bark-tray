@@ -144,9 +144,13 @@ func Push(barkBaseUrl string, pushRequest *PushRequest) (*PushResponse, error) {
 	return &pushResp, nil
 }
 
-func PushTextMessage(barkBaseUrl string, deviceKey string, message string) (*PushResponse, error) {
-	return Push(barkBaseUrl, &PushRequest{
+func PushTextMessage(barkBaseUrl string, deviceKey string, message string, messageUrl string) (*PushResponse, error) {
+	pushRequest := &PushRequest{
 		Body:      message,
 		DeviceKey: deviceKey,
-	})
+	}
+	if messageUrl != "" {
+		pushRequest.Url = messageUrl
+	}
+	return Push(barkBaseUrl, pushRequest)
 }

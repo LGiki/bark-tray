@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"regexp"
 	"runtime"
 	"strings"
 )
@@ -70,4 +71,14 @@ func ToAbsolutePath(filePath, executablePath string) string {
 		return filePath
 	}
 	return filepath.Join(executablePath, filePath)
+}
+
+// ExtractUrlFromText extracts the first URL from the specified text.
+func ExtractUrlFromText(text string) string {
+	re := regexp.MustCompile(`(http|https)://\S+`)
+	extractedUrl := re.FindString(text)
+	if extractedUrl != "" {
+		return extractedUrl
+	}
+	return ""
 }

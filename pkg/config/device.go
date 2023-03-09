@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"github.com/LGiki/bark-tray/pkg/bark"
+	"github.com/LGiki/bark-tray/pkg/util"
 )
 
 type Device struct {
@@ -13,7 +14,8 @@ type Device struct {
 }
 
 func (d *Device) PushTextMessage(message string) error {
-	barkPushResponse, err := bark.PushTextMessage(d.BarkBaseUrl, d.Key, message)
+	messageUrl := util.ExtractUrlFromText(message)
+	barkPushResponse, err := bark.PushTextMessage(d.BarkBaseUrl, d.Key, message, messageUrl)
 	if err != nil {
 		return err
 	}
