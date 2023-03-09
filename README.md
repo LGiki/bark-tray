@@ -16,7 +16,7 @@ https://user-images.githubusercontent.com/20807713/213143098-73b28ce4-4b68-40b5-
 
   ```json
   {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "enableLog": true,
     "logFilePath": "bark-tray.log",
     "userAgent": "Bark Tray/1.0",
